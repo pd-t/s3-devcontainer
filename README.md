@@ -1,31 +1,52 @@
+# S3 Devcontainer Project
 
-# Python 3 (python)
+Welcome to the S3 Devcontainer Project! This initiative is all about providing you with Python scripts that facilitate seamless interactions with AWS S3. By leveraging the power of `boto3` for S3 operations and `python-dotenv` for efficient environment variable management, we aim to streamline your development workflows and enhance productivity.
 
-Develop Python 3 applications.
+## Prerequisites
 
-## Options
+Before diving into this project, there are a couple of key prerequisites to ensure you have the smoothest experience possible:
 
-| Options Id | Description | Type | Default Value |
-|-----|-----|-----|-----|
-| imageVariant | Python version (use -bookworm, or -bullseye variants on local arm64/Apple Silicon): | string | 3.12-bullseye |
+- **Familiarity with Dev Containers**: An understanding of how to use development containers (Dev Containers) will greatly benefit your workflow. If you're new to this concept, consider exploring resources on using Dev Containers or Docker for development.
+- **Python & Poetry Installation**: Ensure that Python and Poetry are installed on your development machine. These tools are essential for managing the project's dependencies and environments.
 
-This template references an image that was [pre-built](https://containers.dev/implementors/reference/#prebuilding) to automatically include needed devcontainer.json metadata.
+## Getting Started
 
-* **Image**: mcr.microsoft.com/devcontainers/python ([source](https://github.com/devcontainers/images/tree/main/src/python))
-* **Applies devcontainer.json contents from image**: Yes ([source](https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/devcontainer.json))
+Follow these steps to get your project up and running:
 
-## Installing or updating Python utilities
+### 1. Clone the Repository
 
-This container installs all Python development utilities using [pipx](https://pipxproject.github.io/pipx/) to avoid impacting the global Python environment. You can use this same utility add additional utilities in an isolated environment. For example:
+Begin by cloning this repository to your local machine. This step is your gateway to starting work with the S3 Devcontainer Project.
+
+### 2. Setup the Environment
+
+Depending on your setup, you have two paths to choose from:
+
+- **Using Dev Containers**: If you're familiar with Dev Containers, proceed to run your dev container which should handle the environment setup automatically.
+- **Manual Setup with Poetry**: Alternatively, run the following command in your terminal to install the project dependencies:
 
 ```bash
-pipx install prospector
+poetry install
 ```
 
-See the [pipx documentation](https://pipxproject.github.io/pipx/docs/) for additional information.
+### 3. Configure Environment Variables
 
+Create a `.env` file in the root directory of your project. This file should contain your AWS credentials, which are necessary for the scripts to interact with AWS S3:
 
+```plaintext
+AWS_ACCESS_KEY_ID=<YOUR_AWS_ACCESS_KEY>
+AWS_SECRET_ACCESS_KEY=<YOUR_AWS_SECRET_ACCESS_KEY>
+```
+
+### 4. Running the Example Script
+
+Once your environment is configured, you can start executing the scripts. To run the example script, use the following command:
+
+```bash
+poetry run src/example.py
+```
+
+This command will initiate the script located at `src/example.py`, demonstrating a basic interaction with AWS S3.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/devcontainers/templates/blob/main/src/python/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
+Dive in and explore the capabilities of interacting with AWS S3 through Python scripts. Whether you're managing files, automating workflows, or simply learning about cloud storage operations, this project is designed to provide a hands-on approach to mastering AWS S3.
